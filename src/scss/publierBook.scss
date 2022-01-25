@@ -1,0 +1,284 @@
+@import "./varscss";
+.publierBook {
+  padding-bottom: 50px;
+  font-family: bodyFont;
+  width: 50vw;
+  background-color: white;
+  box-shadow: 1px 2px 30px rgba(0, 0, 0, 0.13);
+  border-radius: 7px;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 14vh;
+  input[type="text"],
+  input[type="number"] {
+    margin-bottom: 50px;
+    width: 50%;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: 2px solid rgba(128, 128, 128, 0.24);
+    min-height: 30px;
+    height: 3vh;
+    font-size: 17px;
+    font-family: bodyFont;
+    &:focus {
+      outline: none;
+      border-bottom-color: rgb(60, 231, 146);
+      transition: border-bottom-color 0.7s 0.2s ease-in-out;
+    }
+  }
+  .buttonContainer {
+    margin-bottom: auto;
+    margin-top: 20px;
+    align-self: flex-end;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    button {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  .txt {
+    align-self: flex-start;
+    position: relative;
+    left: 25%;
+    top: 25px;
+    transition: top 0.4s 0s;
+    font-family: bodyFont;
+    font-size: 13px;
+    cursor: text;
+  }
+  .checkBox {
+    margin-bottom: 50px;
+    align-self: flex-start;
+    position: relative;
+    left: 25%;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: rgb(60, 231, 146);
+    .nottxt {
+      margin-right: 10px;
+      cursor: pointer;
+    }
+    input {
+      height: 15px;
+      width: 15px;
+      cursor: pointer;
+    }
+  }
+  .imageContainer {
+    border: 2px solid rgba(0, 0, 0, 0.164);
+    height: 200px;
+    min-height: 150px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .addPhoto {
+      height: 60px;
+      width: 60px;
+      cursor: pointer;
+    }
+  }
+  .photoLabel {
+    margin-bottom: 10px;
+    font-weight: bolder;
+    font-size: 15px;
+    font-family: bodyFont;
+    align-self: flex-start;
+    position: relative;
+    left: 24%;
+    cursor: pointer;
+  }
+  input[type="file"] {
+    display: none;
+  }
+  .uploadFileButton {
+    @include button(40px, 15vw, white, rgb(3, 159, 221));
+    max-width: 100px;
+    font-size: 14px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+  }
+  select {
+    cursor: pointer;
+    width: 50%;
+    color: white;
+    text-align: center;
+    height: 4vh;
+    min-height: 35px;
+    border-radius: 2px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    font-family: bodyFont;
+    background-color: rgb(60, 231, 146);
+    border: none;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.295);
+    &:focus {
+      outline: none;
+    }
+    &:hover {
+      background-color: white;
+      color: rgb(60, 231, 146);
+      border: 1px solid rgb(60, 231, 146);
+      box-shadow: 0 0 0 transparent;
+      transition: color 0.2s 0.1s, background-color 0.2s 0.1s,
+        box-shadow 0.2s 0.1s;
+    }
+    option {
+      font-size: 14px;
+      color: black;
+      font-family: bodyFont;
+      background-color: white;
+    }
+  }
+  .languageContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+    width: 100%;
+    .addButton {
+      @include button(30px, 4vw, white, rgb(3, 159, 221));
+      overflow: hidden;
+      align-self: flex-end;
+      position: relative;
+      right: 25%;
+      margin-top: 10px;
+    }
+    .books {
+      width: 80%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      .addedLanguages {
+        cursor: pointer;
+        display: flex;
+        border-radius: 7px;
+        margin: auto;
+        border: 0px solid transparent;
+        padding: 7px;
+        text-align: center;
+        margin-bottom: 5px;
+        background-color: rgb(121, 182, 231);
+        .deleteBook {
+          height: 7px;
+          width: 7px;
+          margin-left: 3px;
+          margin: auto;
+          margin-left: 10px;
+        }
+        .nameLanguage {
+          font-size: 11px;
+          font-family: bodyFont;
+          margin: auto;
+        }
+      }
+    }
+  }
+  textarea {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    resize: none;
+    width: 50%;
+    min-height: 100px;
+    max-height: 200px;
+    font-size: 15px;
+    font-family: bodyFont;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: 2px solid rgba(128, 128, 128, 0.24);
+    &:focus {
+      outline: none;
+      border-bottom-color: rgb(60, 231, 146);
+      transition: border-bottom-color 0.7s 0.2s ease-in-out;
+    }
+  }
+  .title {
+    margin: auto;
+    margin-bottom: 7%;
+    margin-top: 2%;
+    font-family: bodyFont;
+    font-size: 30px;
+    color: rgb(60, 231, 146);
+  }
+  .buttonSubmit {
+    overflow: hidden;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    align-self: flex-end;
+    position: relative;
+    @include button(40px, 8vw, white, rgb(60, 231, 146));
+  }
+  .exception {
+    right: 20%;
+  }
+}
+@media screen and (max-width: $maxWidth) {
+  .publierBook {
+    width: 100vw;
+    input[type="text"],
+    input[type="number"],
+    textarea,
+    select {
+      width: 80%;
+    }
+
+    .checkBox {
+      left: 10%;
+    }
+    .buttonContainer {
+      width: 90%;
+      right: 5%;
+    }
+    .txt {
+      position: relative;
+      left: 10%;
+    }
+    .exception {
+      right: 10%;
+    }
+    select {
+      margin-bottom: 20px;
+      margin-top: 20px;
+    }
+    .buttonSubmit {
+      @include button(45px, 35vw, white, rgb(60, 231, 146));
+    }
+    .uploadFileButton {
+      @include button(40px, 7vw, white, rgb(3, 159, 221));
+      max-width: 200px;
+      font-size: 14px;
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    textarea {
+      height: 10%;
+    }
+    .languageContainer {
+      .addButton {
+        right: 5%;
+        @include button(40px, 20vw, white, rgb(3, 159, 221));
+      }
+    }
+  }
+}

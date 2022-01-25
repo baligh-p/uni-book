@@ -1,0 +1,143 @@
+@import "./varscss";
+::-webkit-input-placeholder {
+  /* Edge */
+  color: rgba(0, 0, 0, 0.733);
+  padding-left: 2px;
+}
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: rgba(0, 0, 0, 0.712);
+  padding-left: 2px;
+}
+
+::placeholder {
+  color: rgba(0, 0, 0, 0.747);
+  padding-left: 2px;
+}
+.searchLogoNav {
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+@media screen and (min-width: $minWidth) {
+  #searchNav {
+    width: 0;
+    transition-property: width;
+    transition-duration: 0.4s;
+    .searchNavInput {
+      padding-left: 6px;
+      width: 100%;
+      display: none;
+      height: 7vh;
+      border: 2px solid black;
+      font-size: 19px;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  .searchContainer {
+    width: 35.4vw;
+    height: 70vh;
+    display: none;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    border-top: none;
+    background-color: white;
+    overflow-y: scroll;
+    position: fixed;
+    overflow-x: hidden;
+    top: 10.6vh;
+    z-index: 30000;
+  }
+  .allSearchItem {
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+  }
+}
+@media screen and (max-width: $maxWidth) {
+  .searchLogoNav {
+    margin-left: 32vw;
+  }
+  #searchNav {
+    display: flex;
+    width: 100vw;
+    height: 100%;
+  }
+  .searchNavInput {
+    width: 100vw;
+    height: 10vh;
+    position: fixed;
+    z-index: 555555;
+    top: 0;
+    left: 0;
+    border: none;
+    min-height: 13vh;
+
+    font-size: 20px;
+    &:focus {
+      outline: none;
+    }
+    padding-left: 3vw;
+  }
+  .searchContainer {
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 13vh;
+    left: 0;
+    border-top: 2px solid black;
+    background-color: whitesmoke;
+    z-index: 666666;
+    overflow-y: scroll;
+  }
+  .positionInter {
+    position: fixed;
+    display: flex;
+    top: 4vh;
+    right: 3vw;
+    z-index: 100000000;
+  }
+}
+.destroy {
+  text-decoration: none;
+  color: black;
+}
+.resultSearch {
+  display: flex;
+  align-items: baseline;
+  height: 10vh;
+  margin-bottom: 20px;
+  .resultSearchImage {
+    width: 17vw;
+    max-width: 80px;
+    min-width: 50px;
+    height: 10vh;
+    margin-right: 2%;
+  }
+  .nameSearch {
+    font-size: 17px;
+    margin-right: auto;
+    white-space: nowrap;
+    font-weight: bolder;
+    align-self: flex-start;
+  }
+  .prixSearch {
+    width: 20%;
+    text-align: center;
+    align-self: stretch;
+    position: relative;
+    top: -10;
+    vertical-align: bottom;
+  }
+  .founderSearch {
+    white-space: nowrap;
+    color: #651fff;
+    font-size: 15px;
+  }
+}

@@ -1,0 +1,525 @@
+@import "_varscss";
+@media screen and (min-width: 1025px) {
+  .pageBookContainer {
+    display: flex;
+    margin-top: 15vh;
+    .partCommentsContainer {
+      width: 35vw;
+      height: 85vh;
+      position: fixed;
+      top: 15vh;
+      right: 0;
+      .commentsType {
+        background-color: map-get($color, "pageBookCommentBorder");
+        font-size: 18px;
+        width: 99.5%;
+        height: 8.5vh;
+        display: flex;
+        align-items: center;
+        border: 1px solid transparent;
+        #generalComments {
+          border-right: 2px solid white;
+        }
+        p {
+          transition-property: width;
+          transition-delay: 0.1s;
+          overflow: hidden;
+          transition-duration: 0.5s;
+          width: 49.8%;
+          cursor: pointer;
+          text-align: center;
+          color: white;
+        }
+      }
+      .comments {
+        width: 99%;
+        height: 62.2vh;
+        background-color: white;
+        border-left: 2px solid map-get($color, "pageBookCommentBorder");
+        border-right: 2px solid map-get($color, "pageBookCommentBorder");
+        overflow-y: scroll;
+        .commentContainer {
+          margin-top: 20px;
+          display: grid;
+          grid-template: auto / repeat(12, 1fr);
+          grid-template-areas: "o . t t t t t t t t t t";
+          .part1 {
+            margin-left: 20px;
+            grid-area: o;
+            display: grid;
+            grid-template: 7px 45px / repeat(3, 1fr);
+            grid-template-areas:
+              ". n"
+              "i .";
+            .profilImage {
+              grid-area: i;
+              border: 2px solid #00b0ff;
+              height: 50px;
+              width: 50px;
+              border-radius: 50%;
+            }
+            .typerComment {
+              grid-area: n;
+              margin: 0;
+              font-size: 14px;
+              font-family: bodyFont;
+            }
+          }
+          .part2 {
+            display: grid;
+            align-items: center;
+            grid-area: t;
+            font-size: 14px;
+            font-family: bodyFont;
+            grid-template: auto auto/ repeat(6, 1fr);
+            grid-template-areas:
+              "m m m m m m"
+              ". . . . d .";
+            .commentBook {
+              grid-area: m;
+              font-size: 14px;
+              font-family: bodyFont;
+              margin-left: 10px;
+              word-wrap: break-word;
+              margin: 0;
+              margin-bottom: 10px;
+            }
+            .dateComment {
+              grid-area: d;
+              margin: 0;
+              font-size: 13px;
+              white-space: nowrap;
+            }
+          }
+        }
+        .diviseur {
+          height: 2px;
+          width: 95%;
+          align-self: flex-start;
+          background-color: rgba(0, 0, 0, 0.699);
+          margin-left: auto;
+          margin-right: auto;
+          margin-top: 20px;
+        }
+      }
+      .inputCommentsContainer {
+        width: 100%;
+        height: 14vh;
+        display: flex;
+        align-items: center;
+        background-color: white;
+        ::-webkit-scrollbar {
+          display: none;
+        }
+        ::-webkit-input-placeholder {
+          color: black;
+          opacity: 0.7;
+        }
+        .inputComments {
+          width: 100%;
+          min-width: 98.2%;
+          resize: none;
+          width: 99.2%;
+          height: 12.4vh;
+          max-height: 150px;
+          font-size: 20px;
+          border: 2px solid map-get($color, "pageBookCommentBorder");
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+    .partBookContainer {
+      width: 60vw;
+      margin-bottom: 10vh;
+      padding-bottom: 5vh;
+      margin-left: 2vw;
+      border: 1px solid transparent;
+      border-radius: 7px;
+      box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.205);
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .imagePartBook {
+        width: 50%;
+        height: 55vh;
+        margin-top: 3vh;
+      }
+      .partBookReactContainer {
+        display: flex;
+        width: 50%;
+        align-items: center;
+        .partBookJaime {
+          position: relative;
+          left: 0;
+          display: flex;
+          align-items: center;
+          .jaimePartBook {
+            width: 33px;
+            height: 33px;
+            cursor: pointer;
+            vertical-align: middle;
+          }
+          p {
+            font-size: 16px;
+            margin-left: 7px;
+          }
+        }
+        .partBookAimePas {
+          display: flex;
+          align-items: flex-end;
+          position: relative;
+          left: 10%;
+          .aimePasPartBook {
+            width: 33px;
+            height: 33px;
+            cursor: pointer;
+            vertical-align: middle;
+          }
+          p {
+            font-size: 16px;
+            margin-left: 7px;
+          }
+        }
+      }
+      .partBookTitle {
+        width: 50%;
+        font-size: 21px;
+        color: black;
+      }
+      .partBookFounder {
+        width: 50%;
+        position: relative;
+        text-align: right;
+        .partBookFounderLink {
+          font-size: 18px;
+          color: #00b0ff;
+          text-decoration: none;
+        }
+      }
+      .partBookDescription {
+        width: 70%;
+        font-size: 17px;
+      }
+      .partBookPrix {
+        width: 45%;
+        position: relative;
+        text-align: right;
+        font-size: 20px;
+      }
+      .downLoadContainer {
+        width: 70%;
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+        display: flex;
+        flex-direction: row-reverse;
+        .buttonDownload {
+          cursor: pointer;
+          max-width: 150px;
+          height: 50px;
+          width: 10vw;
+          text-decoration: none;
+          font-size: 17px;
+          border: 1px solid #00b0ff;
+          color: #00b0ff;
+          background-color: white;
+          &:hover {
+            border: none;
+            color: white;
+            background-color: #1de9b6;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.247);
+          }
+        }
+      }
+      .tableContainer {
+        width: 70%;
+        .tableInformation {
+          background-color: white;
+          border: 1px solid black;
+          tr {
+            width: 20vw;
+            td {
+              width: 10vw;
+              font-size: 16px;
+              text-align: center;
+            }
+            th {
+              width: 5vw;
+              font-size: 16px;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 1024px) {
+  .pageBookContainer {
+    margin-top: 15vh;
+    .partCommentsContainer {
+      width: 100vw;
+      height: 85vh;
+      .commentsType {
+        background-color: map-get($color, "pageBookCommentBorder");
+        font-size: 18px;
+        width: 100%;
+        height: 8.5vh;
+        display: flex;
+        align-items: center;
+        border: 1px solid transparent;
+        #generalComments {
+          border-right: 2px solid white;
+        }
+        p {
+          transition-property: width;
+          transition-delay: 0.1s;
+          overflow: hidden;
+          transition-duration: 0.5s;
+          width: 49.8%;
+          cursor: pointer;
+          text-align: center;
+          color: white;
+        }
+      }
+      .comments {
+        width: 99%;
+        height: 62.2vh;
+        background-color: white;
+        overflow-y: scroll;
+        margin-bottom: 2.6vh;
+        .commentContainer {
+          margin-top: 20px;
+          display: grid;
+          grid-template: auto / repeat(12, 1fr);
+          grid-template-areas: "o . t t t t t t t t t t";
+          .part1 {
+            margin-left: 20px;
+            grid-area: o;
+            display: grid;
+            grid-template: 7px 45px / repeat(3, 1fr);
+            grid-template-areas:
+              ". n"
+              "i .";
+            .profilImage {
+              grid-area: i;
+              border: 2px solid #00b0ff;
+              height: 50px;
+              width: 50px;
+              border-radius: 50%;
+            }
+            .typerComment {
+              grid-area: n;
+              margin: 0;
+              font-size: 14px;
+              font-family: bodyFont;
+            }
+          }
+          .part2 {
+            display: grid;
+            align-items: center;
+            grid-area: t;
+            font-size: 14px;
+            font-family: bodyFont;
+            grid-template: auto auto / repeat(6, 1fr);
+            grid-template-areas:
+              "m m m m m m"
+              ". . . . d .";
+            .commentBook {
+              grid-area: m;
+              font-size: 14px;
+              font-family: bodyFont;
+              margin-left: 10px;
+              word-wrap: break-word;
+              margin: 0;
+              margin-bottom: 10px;
+            }
+            .dateComment {
+              grid-area: d;
+              margin: 0;
+              font-size: 13px;
+              white-space: nowrap;
+            }
+          }
+        }
+      }
+      .diviseur {
+        height: 2px;
+        width: 95%;
+        align-self: flex-start;
+        background-color: rgba(0, 0, 0, 0.699);
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 30px;
+      }
+      .inputCommentsContainer {
+        width: 99%;
+        height: 10vh;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        align-items: center;
+        background-color: white;
+        ::-webkit-scrollbar {
+          display: none;
+        }
+        ::-webkit-input-placeholder {
+          color: black;
+          opacity: 0.7;
+        }
+        .inputComments {
+          resize: none;
+          padding-top: 5vh;
+          margin-left: auto;
+          margin-right: auto;
+          width: 98%;
+          min-width: 98%;
+          height: 8vh;
+          font-size: 20px;
+          border: 2px solid map-get($color, "pageBookCommentBorder");
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+    .partBookContainer {
+      width: 100vw;
+      margin-bottom: 2vh;
+      padding-bottom: 5vh;
+      border: 1px solid transparent;
+      border-radius: 7px;
+      box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.205);
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .imagePartBook {
+        width: 80%;
+        height: 55vh;
+        min-height: 300px;
+        max-width: 400px;
+        margin-top: 3vh;
+      }
+      .partBookReactContainer {
+        display: flex;
+        width: 80%;
+        align-items: center;
+        .partBookJaime {
+          position: relative;
+          left: 0;
+          display: flex;
+          align-items: center;
+          .jaimePartBook {
+            width: 33px;
+            height: 33px;
+            cursor: pointer;
+            vertical-align: middle;
+          }
+          p {
+            font-size: 16px;
+            margin-left: 7px;
+          }
+        }
+        .partBookAimePas {
+          display: flex;
+          align-items: flex-end;
+          position: relative;
+          left: 10%;
+          .aimePasPartBook {
+            width: 33px;
+            height: 33px;
+            cursor: pointer;
+            vertical-align: middle;
+          }
+          p {
+            font-size: 16px;
+            margin-left: 7px;
+          }
+        }
+      }
+      .partBookTitle {
+        width: 45%;
+        font-size: 21px;
+        color: black;
+      }
+      .partBookFounder {
+        width: 80%;
+        position: relative;
+        text-align: right;
+        .partBookFounderLink {
+          font-size: 18px;
+          color: #00b0ff;
+          text-decoration: none;
+        }
+      }
+      .partBookDescription {
+        width: 80%;
+        font-size: 17px;
+        text-align: center;
+      }
+      .partBookPrix {
+        width: 75%;
+        position: relative;
+        text-align: right;
+        font-size: 20px;
+      }
+      .downLoadContainer {
+        width: 85%;
+        margin-top: 2vh;
+        margin-bottom: 3vh;
+        display: flex;
+        flex-direction: row-reverse;
+        .buttonDownload {
+          cursor: pointer;
+          height: 8vh;
+          width: 30vw;
+          max-width: 150px;
+          text-decoration: none;
+          font-size: 17px;
+          border: 1px solid #00b0ff;
+          color: #00b0ff;
+          background-color: white;
+          &:hover {
+            border: none;
+            color: white;
+            background-color: #1de9b6;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.247);
+          }
+        }
+      }
+      .tableContainer {
+        width: 70%;
+        .tableInformation {
+          background-color: white;
+          border: 1px solid black;
+          tr {
+            width: 20vw;
+            td {
+              width: 10vw;
+              font-size: 16px;
+              text-align: center;
+            }
+            th {
+              width: 5vw;
+              font-size: 16px;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.CommentSubmit {
+  z-index: 1000;
+  position: relative;
+  height: 30px;
+  width: 30px;
+  left: -40px;
+  cursor: pointer;
+}

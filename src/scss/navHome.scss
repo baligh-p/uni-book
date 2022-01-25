@@ -1,0 +1,269 @@
+@import "./varscss";
+body {
+  background-color: rgba(240, 240, 240, 0.904);
+}
+/** nav laptop scree**/
+@media screen and (min-width: $minWidth) {
+  .navHome {
+    z-index: 5000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    align-items: center;
+    @include displayFlex(row);
+    height: 13vh;
+    background-color: white;
+    border: 0px solid transparent;
+    box-shadow: 1px 1px 4px black;
+    .navHomeItem {
+      text-decoration: none;
+      color: black;
+      font-family: bodyFont;
+      &:hover {
+        color: #6200ea;
+        border-bottom: 5px solid #6200ea;
+        padding-bottom: 4vh;
+        transition-delay: 0.2s;
+        transition-duration: 0.1s;
+        transition-property: border-bottom;
+      }
+    }
+    .navHomePart1 {
+      height: 13vh;
+      width: 30vw;
+      @include displayFlex(row);
+      align-items: center;
+      li {
+        margin-right: 9vw;
+      }
+      .homeLogoContainer {
+        .logo {
+          margin-left: 60px;
+          align-items: center;
+          @include displayFlex(row);
+          p {
+            font-family: siteName;
+            text-shadow: 1px 2px rgba(0, 0, 0, 0.301);
+            font-size: 25px;
+            color: map-get($color, "siteNameColor");
+          }
+          img {
+            width: 55px;
+            height: 55px;
+            margin-right: 10px;
+          }
+        }
+      }
+      .burger {
+        display: none;
+      }
+    }
+    .navHomePart2 {
+      width: 70vw;
+      @include displayFlex(row);
+      height: 13vh;
+      align-items: center;
+      .profilCircle {
+        cursor: pointer;
+        border: 0px solid transparent;
+        background-color: black;
+        width: 60px;
+        @include disJusCen(row);
+        border-radius: 50%;
+        height: 60px;
+        .profilCircleLink {
+          text-decoration: none;
+          color: white;
+          font-size: 35px;
+          font-family: bodyFont;
+        }
+      }
+      li {
+        font-size: 17px;
+        margin-left: auto;
+        margin-right: auto;
+        #login {
+          border: 2px solid black;
+          padding: 10px 15px 10px 15px;
+          border-radius: 2px;
+          background-color: black;
+          color: whitesmoke;
+          &:hover {
+            background-color: rgba(0, 0, 0, 0.925);
+            color: white;
+          }
+        }
+        .sign {
+          border: 2px solid black;
+          padding: 12px 17px 12px 17px;
+          border-radius: 2px;
+          &:hover {
+            background-color: whitesmoke;
+            color: rgba(0, 0, 0, 0.863);
+            border-color: rgba(0, 0, 0, 0.863);
+          }
+        }
+      }
+    }
+  }
+}
+/**mobile scree nav**/
+@media screen and (max-width: $maxWidth) {
+  .navHome {
+    z-index: 5000;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    align-items: center;
+    @include displayFlex(row);
+    height: 13vh;
+    background-color: white;
+    border: 0px solid transparent;
+    box-shadow: 1px 1px 4px black;
+    .navHomeItem {
+      text-decoration: none;
+      color: black;
+      font-family: bodyFont;
+      &:hover {
+        color: #6200ea;
+      }
+    }
+    .navHomePart1 {
+      height: 13vh;
+      width: 100vw;
+      @include displayFlex(row);
+      align-items: center;
+      li {
+        margin-right: 9vw;
+      }
+      .homeLogoContainer {
+        .logo {
+          margin-left: 60px;
+          align-items: center;
+          @include displayFlex(row);
+          p {
+            font-family: siteName;
+            width: 4vw;
+            font-size: 23px;
+            color: map-get($color, "siteNameColor");
+          }
+          img {
+            width: 10vw;
+            height: 8vh;
+            margin-right: 10px;
+          }
+        }
+      }
+      .burger {
+        position: fixed;
+        display: flex;
+        top: 0;
+        right: 0;
+        width: 25vw;
+        height: 13vh;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+        transition: 0.2s;
+        &::before {
+          content: "";
+          position: absolute;
+          width: 35px;
+          height: 4px;
+          background: black;
+          transition: 0.2s;
+          transform: translateY(-10px);
+          box-shadow: 0 10px 0 black;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          width: 35px;
+          height: 4px;
+          background: black;
+          transition: 0.2s;
+          transform: translateY(10px);
+        }
+      }
+      #burger.active ::before {
+        transform: translateY(0px) rotate(45deg);
+        box-shadow: 0 0 0 black;
+      }
+      #burger.active ::after {
+        transform: translateY(0px) rotate(-45deg);
+      }
+    }
+    #listeContainer {
+      transition-property: width;
+      transition-duration: 0.3s;
+    }
+    .navHomePart2 {
+      overflow: hidden;
+      position: fixed;
+      top: 13vh;
+      right: 0;
+      height: 87vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 0;
+      background-color: white;
+      border: 1px solid rgba(0, 0, 0, 0.37);
+      @include displayFlex(column);
+      align-items: center;
+      .profilCircle {
+        .profilCircleLink {
+          font-family: bodyFont;
+          color: #6200ea;
+          text-decoration: underline;
+          text-decoration-color: #6200ea;
+        }
+      }
+      li {
+        font-size: 20px;
+        min-height: 13vh;
+        max-height: 30vh;
+        white-space: nowrap;
+        .logOutContainer {
+          display: flex;
+          align-items: center;
+          font-family: bodyFont;
+          color: #6200ea;
+          width: 80%;
+          cursor: pointer;
+          .logOut {
+            width: 40px;
+            height: 40px;
+            margin-left: 10px;
+          }
+        }
+        #login {
+          border: 2px solid black;
+          padding: 10px 15px 10px 15px;
+          border-radius: 2px;
+          background-color: black;
+          color: whitesmoke;
+          &:hover {
+            background-color: rgba(0, 0, 0, 0.925);
+            color: white;
+          }
+        }
+        .sign {
+          border: 2px solid black;
+          padding: 12px 17px 12px 17px;
+          border-radius: 2px;
+          &:hover {
+            background-color: whitesmoke;
+            color: rgba(0, 0, 0, 0.863);
+            border-color: rgba(0, 0, 0, 0.863);
+          }
+        }
+      }
+    }
+  }
+  #burger {
+    display: flex;
+  }
+}

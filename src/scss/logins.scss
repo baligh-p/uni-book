@@ -1,0 +1,472 @@
+@import "varscss";
+@media screen and (min-width: $minWidth) {
+  .navHomeDisplay {
+    display: none;
+  }
+  .pageLoginContainer {
+    ::-webkit-scrollbar {
+      display: none;
+    }
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    .loginParagraph {
+      transition-delay: 0.1s;
+      transition-duration: 0.5s;
+      color: white;
+      float: left;
+      font-size: 20px;
+      letter-spacing: 2px;
+      line-height: 6vh;
+      font-family: bodyFont;
+      width: 55vw;
+      height: 100vh;
+      display: flex;
+      background-color: rgba(10, 10, 10, 0.87);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .description {
+        width: 80%;
+        text-align: center;
+      }
+      .paragraphName {
+        font-family: siteName;
+        line-height: 75px;
+        max-inline-size: 150px;
+        width: 12vw;
+        font-size: 50px;
+        padding-left: 2vw;
+        border-left: 6px solid rgba(0, 0, 0, 0.411);
+        border-left-color: rgb(60, 231, 146);
+        color: rgb(60, 231, 146);
+        .decalageName {
+          margin-left: 20px;
+          font-family: siteName;
+        }
+      }
+    }
+    .loginContainer {
+      background-color: white;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 45vw;
+      transition-delay: 0.1s;
+      transition-duration: 0.5s;
+      overflow: hidden;
+      .returnToHome {
+        position: absolute;
+        top: 3vh;
+        left: 2vw;
+      }
+      .formTitleContainer {
+        display: flex;
+        align-items: center;
+        margin-bottom: 6vh;
+      }
+      .formTitleDecoration {
+        height: 1vh;
+        width: 5vw;
+        margin-left: 2vw;
+        margin-right: 2vw;
+        background-color: rgb(60, 231, 146);
+      }
+      .formTitle {
+        font-family: siteName;
+        font-size: 40px;
+        color: rgba(10, 10, 10, 0.87);
+      }
+      .loginPassWord,
+      .loginUserName {
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 18px;
+        width: 65%;
+        margin-bottom: 6vh;
+        height: 7vh;
+        max-height: 90px;
+        padding-left: 5px;
+        border: 2px solid rgb(60, 231, 146);
+        &:focus {
+          outline: none;
+          border: 2px solid rgb(2, 236, 119);
+        }
+      }
+      .diviseur {
+        width: 55%;
+        height: 0.09vh;
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+        background-color: rgba(128, 128, 128, 0.37);
+      }
+      .createAccountLink {
+        text-decoration: none;
+        color: rgb(27, 145, 86);
+      }
+      .acceptCondition {
+        width: 70%;
+        margin-bottom: 2vh;
+        align-items: center;
+        .condition {
+          text-decoration: none;
+          color: #f50057;
+        }
+      }
+      .createAccountButton {
+        cursor: pointer;
+        font-size: 18px;
+        width: 67%;
+        background-color: white;
+        color: rgb(27, 145, 86);
+        border: 1px solid rgb(27, 145, 86);
+        height: 6vh;
+        max-height: 100px;
+        &:focus {
+          outline: none;
+        }
+        &:hover {
+          border: 1px solid rgb(36, 204, 120);
+          color: rgb(60, 231, 146);
+          transition-delay: 0.2s;
+          transition-duration: 0.2s;
+        }
+      }
+      .loginSubmit {
+        cursor: pointer;
+        font-size: 18px;
+        width: 67%;
+        background-color: rgb(60, 231, 146);
+        color: white;
+        border: none;
+        height: 6vh;
+        max-height: 100px;
+        &:focus {
+          outline: none;
+        }
+        &:hover {
+          background-color: white;
+          border: 1px solid rgb(60, 231, 146);
+          color: rgb(60, 231, 146);
+          transition-delay: 0.2s;
+          transition-duration: 0.2s;
+        }
+      }
+    }
+    .signContainer {
+      @extend .loginContainer;
+      overflow: scroll;
+      .formTitleContainer {
+        margin-bottom: 1vh;
+      }
+      .diviseur {
+        margin-bottom: 2vh;
+        margin-top: 2vh;
+      }
+    }
+  }
+}
+@media screen and (max-width: $maxWidth) {
+  .pageLoginContainer {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .loginParagraph {
+      display: none;
+    }
+    .loginContainer {
+      background-color: white;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 95vw;
+      .returnToHome {
+        position: absolute;
+        top: 0;
+        left: 7vw;
+      }
+      .formTitleContainer {
+        display: flex;
+        align-items: center;
+        margin-bottom: 6vh;
+      }
+      .formTitleDecoration {
+        height: 1vh;
+        width: 5vw;
+        margin-left: 2vw;
+        margin-right: 2vw;
+        background-color: rgb(60, 231, 146);
+      }
+      .formTitle {
+        font-family: siteName;
+        font-size: 40px;
+        color: rgba(10, 10, 10, 0.87);
+      }
+      .loginPassWord,
+      .loginUserName {
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 18px;
+        width: 75%;
+        margin-bottom: 6vh;
+        height: 7vh;
+        padding-left: 5px;
+        border: 2px solid rgb(60, 231, 146);
+        &:focus {
+          outline: none;
+          border: 2px solid rgb(60, 231, 146);
+        }
+      }
+      .diviseur {
+        width: 55%;
+        height: 0.15vh;
+        margin-top: 3vh;
+        margin-bottom: 3vh;
+        background-color: rgba(128, 128, 128, 0.438);
+      }
+      .createAccountLink {
+        text-decoration: none;
+        color: rgb(27, 145, 86);
+      }
+      .acceptCondition {
+        width: 70%;
+        margin-bottom: 4vh;
+        align-items: center;
+        .condition {
+          text-decoration: none;
+          color: #f50057;
+        }
+      }
+      .createAccountButton {
+        cursor: pointer;
+        font-size: 18px;
+        width: 77%;
+        background-color: white;
+        color: rgb(27, 145, 86);
+        border: 1px solid rgb(27, 145, 86);
+        height: 6vh;
+        &:focus {
+          outline: none;
+        }
+        &:hover {
+          border: 1px solid rgb(36, 204, 120);
+          color: rgb(60, 231, 146);
+          transition-delay: 0.2s;
+          transition-duration: 0.2s;
+        }
+      }
+      .loginSubmit {
+        cursor: pointer;
+        font-size: 18px;
+        width: 77%;
+        background-color: rgb(60, 231, 146);
+        color: white;
+        border: none;
+        height: 6vh;
+        &:focus {
+          outline: none;
+        }
+        &:hover {
+          background-color: white;
+          border: 1px solid rgb(60, 231, 146);
+          color: rgb(60, 231, 146);
+          transition-delay: 0.2s;
+          transition-duration: 0.2s;
+        }
+      }
+    }
+    .signContainer {
+      background-color: white;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 95vw;
+      .formTitleContainer {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1vh;
+      }
+      .formTitleDecoration {
+        height: 1vh;
+        width: 5vw;
+        margin-left: 2vw;
+        margin-right: 2vw;
+        background-color: rgb(60, 231, 146);
+      }
+      .formTitle {
+        font-family: siteName;
+        font-size: 40px;
+        color: rgba(10, 10, 10, 0.87);
+      }
+      .loginPassWord,
+      .loginUserName {
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 18px;
+        width: 75%;
+        margin-bottom: 4vh;
+        height: 7vh;
+        padding-left: 5px;
+        &:focus {
+          outline: none;
+          border: 2px solid rgb(60, 231, 146);
+        }
+      }
+      .diviseur {
+        width: 55%;
+        height: 0.15vh;
+        margin-top: 2vh;
+        margin-bottom: 2vh;
+        background-color: rgba(128, 128, 128, 0.438);
+      }
+      .createAccountLink {
+        text-decoration: none;
+        color: rgb(27, 145, 86);
+      }
+      .acceptCondition {
+        width: 70%;
+        margin-bottom: 4vh;
+        align-items: center;
+        .condition {
+          text-decoration: none;
+          color: #f50057;
+        }
+      }
+      .createAccountButton {
+        cursor: pointer;
+        font-size: 18px;
+        width: 77%;
+        background-color: white;
+        color: rgb(27, 145, 86);
+        border: 1px solid rgb(27, 145, 86);
+        height: 6vh;
+        &:focus {
+          outline: none;
+        }
+        &:hover {
+          border: 1px solid rgb(36, 204, 120);
+          color: rgb(60, 231, 146);
+          transition-delay: 0.2s;
+          transition-duration: 0.2s;
+        }
+      }
+      .loginSubmit {
+        cursor: pointer;
+        font-size: 18px;
+        width: 77%;
+        background-color: rgb(60, 231, 146);
+        color: white;
+        border: none;
+        height: 6vh;
+        &:focus {
+          outline: none;
+        }
+        &:hover {
+          background-color: white;
+          border: 1px solid rgb(60, 231, 146);
+          color: rgb(60, 231, 146);
+          transition-delay: 0.2s;
+          transition-duration: 0.2s;
+        }
+      }
+    }
+  }
+}
+.loading {
+  transition-duration: 0.5s;
+  display: none;
+  opacity: 0;
+  font-family: ‘Arial Narrow’, sans-serif;
+  font-weight: 100;
+  font-size: 1.1em;
+  color: rgb(60, 163, 231);
+  span {
+    position: relative;
+    top: 2px;
+    display: inline-block;
+    text-transform: uppercase;
+    opacity: 0;
+    transform: rotateX(-90deg);
+  }
+  .let1 {
+    animation: drop 1.2s ease-in-out infinite;
+    animation-delay: 1.2s;
+  }
+
+  .let2 {
+    animation: drop 1.2s ease-in-out infinite;
+    animation-delay: 1.3s;
+  }
+
+  .let3 {
+    animation: drop 1.2s ease-in-out infinite;
+    animation-delay: 1.4s;
+  }
+
+  .let4 {
+    animation: drop 1.2s ease-in-out infinite;
+    animation-delay: 1.5s;
+  }
+
+  .let5 {
+    animation: drop 1.2s ease-in-out infinite;
+    animation-delay: 1.6s;
+  }
+
+  .let6 {
+    animation: drop 1.2s ease-in-out infinite;
+    animation-delay: 1.7s;
+  }
+
+  .let7 {
+    animation: drop 1.2s ease-in-out infinite;
+    animation-delay: 1.8s;
+  }
+
+  @keyframes drop {
+    10% {
+      opacity: 0.5;
+    }
+    20% {
+      opacity: 1;
+      top: 1.78em;
+      transform: rotateX(-360deg);
+    }
+    80% {
+      opacity: 1;
+      top: 1.78em;
+      transform: rotateX(-360deg);
+    }
+    90% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 0;
+      top: 3.94em;
+    }
+  }
+}
+.messageError {
+  display: none;
+  font-family: bodyFont;
+  margin-top: -2vh;
+  margin-bottom: 3vh;
+  font-size: 14px;
+  border: 1px solid transparent;
+  background-color: rgb(248, 120, 120);
+  border-radius: 2px;
+  padding: 7px 20px 7px 20px;
+  text-align: center;
+  color: red;
+}

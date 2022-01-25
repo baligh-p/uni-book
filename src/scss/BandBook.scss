@@ -1,0 +1,216 @@
+@import "./varscss";
+html {
+  scroll-behavior: smooth;
+}
+@media screen and (min-width: $minWidth) {
+  .band {
+    ::-webkit-scrollbar {
+      display: none;
+    }
+    min-height: 400px;
+    max-height: 650px;
+    width: 100%;
+    background-color: white;
+    overflow: hidden;
+    .titleBand {
+      font-size: 22px;
+      position: relative;
+      left: 2vw;
+      color: #00bfa5;
+    }
+    .bandBook {
+      margin-top: -30px;
+      scroll-behavior: smooth;
+      width: 100%;
+      height: 60vh;
+      display: flex;
+      overflow: scroll;
+      background-color: white;
+      .iconBook {
+        background-color: white;
+        height: 100%;
+        min-width: 23vw;
+        max-width: 23vw;
+        margin-left: 5.2vw;
+        margin-right: 5.2vw;
+        overflow: hidden;
+        .imageIcon {
+          width: 100%;
+          height: 40%;
+          box-shadow: -1px -5px 15px;
+        }
+        .description {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          font-size: 16px;
+        }
+        .founder {
+          margin-top: -15px;
+          text-align: right;
+          white-space: nowrap;
+          font-size: 17px;
+          font-weight: bolder;
+          .linkFounder {
+            color: #651fff;
+            text-decoration: none;
+          }
+        }
+        .nameIconBook {
+          font-size: 20px;
+          white-space: nowrap;
+          overflow: hidden;
+        }
+        .prixIcon {
+          font-size: 19px;
+          font-weight: bold;
+          text-align: right;
+          width: 90%;
+          margin-top: -2px;
+        }
+      }
+    }
+    .arrow {
+      width: 30px;
+      height: 30px;
+      border: 0px solid transparent;
+      vertical-align: middle;
+      background-color: rgba(0, 0, 0, 0.74);
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .arrowRight {
+      padding: 8px 8px 8px 10px;
+      position: sticky;
+      top: 47%;
+      left: 93.5vw;
+    }
+    .arrowLeft {
+      padding: 8px 10px 8px 8px;
+      position: sticky;
+      top: 47%;
+      right: 92vw;
+    }
+    .star {
+      height: 2vh;
+      width: 1vw;
+    }
+  }
+}
+@media screen and (max-width: $maxWidth) {
+  .band {
+    ::-webkit-scrollbar {
+      display: none;
+    }
+    width: 100%;
+    background-color: white;
+    overflow: hidden;
+    .titleBand {
+      font-size: 22px;
+      position: relative;
+      left: 2vw;
+      color: #00bfa5;
+    }
+    .bandBook {
+      scroll-behavior: smooth;
+      margin-top: -6vh;
+      width: 100%;
+      display: flex;
+      transition-duration: 0.1s;
+      transition-property: margin-left;
+      background-color: white;
+      .iconBook {
+        background-color: white;
+        min-width: 80vw;
+        min-height: 300px;
+        max-height: 400px;
+        margin-left: 10vw;
+        margin-right: 10vw;
+        .imageIcon {
+          width: 100%;
+          height: 40%;
+        }
+        .description {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          font-size: 16px;
+          margin-bottom: 3vh;
+        }
+        .founder {
+          margin-bottom: 3vh;
+          text-align: right;
+          white-space: nowrap;
+          font-size: 17px;
+          font-weight: bolder;
+          .linkFounder {
+            color: #651fff;
+            text-decoration: none;
+          }
+        }
+        .nameIconBook {
+          font-size: 20px;
+          margin-bottom: 3vh;
+          white-space: nowrap;
+          overflow: hidden;
+        }
+        .prixIcon {
+          font-size: 19px;
+          font-weight: bold;
+          text-align: right;
+          width: 90%;
+          margin-top: 2vh;
+        }
+      }
+    }
+    .arrow {
+      width: 30px;
+      height: 30px;
+      border: 0px solid transparent;
+      vertical-align: middle;
+      background-color: rgba(0, 0, 0, 0.74);
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .arrowRight {
+      padding: 8px 8px 8px 10px;
+      position: sticky;
+      top: 42.5%;
+      left: 85vw;
+    }
+    .arrowLeft {
+      padding: 8px 10px 8px 8px;
+      position: sticky;
+      top: 42.5%;
+      right: 85vw;
+    }
+    .star {
+      height: 2.5vh;
+      width: 3.5vw;
+    }
+  }
+}
+.moreInfoBook {
+  font-size: 16px;
+  text-align: center;
+  margin-top: -0.5vh;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  img {
+    width: 17px;
+    margin-right: auto;
+    height: 17px;
+  }
+  .linkMoreInfo {
+    margin-left: auto;
+    margin-right: 4px;
+    font-size: 14px;
+    text-decoration: underline;
+    text-decoration-color: #3260e0;
+    color: #3260e0;
+    font-family: bodyFont;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+  }
+}

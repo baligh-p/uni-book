@@ -1,0 +1,179 @@
+@import "./varscss";
+.publicationContainer {
+  width: 45vw;
+
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+}
+@media screen and (max-width: $maxWidth) {
+  .publicationContainer {
+    width: 100%;
+  }
+}
+/*poster*/
+.posterContainer {
+  width: 45vw;
+  background-color: white;
+  box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.178);
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 18vh;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .header {
+    align-items: center;
+    display: flex;
+    .addPostImage {
+      cursor: pointer;
+      position: relative;
+      bottom: 2px;
+      right: 0;
+    }
+  }
+  .postTitle {
+    font-family: bodyFont;
+    font-size: 27px;
+    font-weight: 800;
+    color: rgba(0, 0, 0, 0.808);
+    margin-bottom: 10px;
+    margin-top: 0;
+    align-self: flex-start;
+    width: 100%;
+    text-align: center;
+  }
+  .labelSearch {
+    transform: translateY(32px);
+    transition: transform 0.4s 0.1s, font-size 0.4s 0.1s;
+    position: relative;
+    font-size: 14px;
+    left: 5px;
+    cursor: text;
+    opacity: 0.8;
+  }
+  .partPoster {
+    display: flex;
+    width: 70%;
+    margin-bottom: 30px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    .booksContainer {
+      width: 100%;
+      height: 70vh;
+      border-radius: 7px;
+      overflow-y: scroll;
+      display: none;
+      overflow-x: hidden;
+      border: 3px solid rgba(0, 0, 0, 0.651);
+      .loaderContainer {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .bookResult {
+        display: flex;
+        align-items: center;
+        position: relative;
+        cursor: pointer;
+        width: 100%;
+        img {
+          width: 60px;
+          height: 60px;
+        }
+        div {
+          display: flex;
+          align-items: center;
+          width: 85%;
+        }
+        h3 {
+          font-family: bodyFont;
+          font-size: 17px;
+          position: relative;
+          bottom: 10px;
+          left: 10px;
+          color: rgb(29, 168, 223);
+          text-shadow: 1px 2px rgba(0, 0, 0, 0.068);
+        }
+        h4 {
+          position: relative;
+          bottom: -15px;
+          margin-right: 5px;
+          text-align: center;
+          color: rgb(157, 86, 223);
+        }
+      }
+      .divisieur {
+        height: 1px;
+        background-color: rgba(0, 0, 0, 0.13);
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+    input {
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 2px;
+      @include input(40px, 100%, rgb(60, 231, 146));
+    }
+  }
+  .part2Poster {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-bottom: 50px;
+    width: 70%;
+    .textLabel {
+      transform: translateY(32px);
+      transition: transform 0.4s 0.1s, font-size 0.4s 0.1s;
+      position: relative;
+      font-size: 14px;
+      left: 5px;
+      cursor: text;
+      opacity: 0.8;
+    }
+    textarea {
+      resize: none;
+      padding-top: 12px;
+      width: 100%;
+      height: 100px;
+      border-radius: 5px;
+      font-size: 16px;
+      font-family: bodyFont;
+      border: 2px solid rgba(128, 128, 128, 0.521);
+      &:focus {
+        outline: none;
+        border-color: rgb(60, 231, 146);
+        transition: border-color 0.7s 0.2s ease-in-out;
+      }
+    }
+  }
+  .postButtonSubmit {
+    @include button(40px, 80px, white, rgb(60, 231, 146));
+    align-self: flex-end;
+    position: relative;
+    margin-bottom: 10px;
+    right: 10%;
+    border-radius: 5px;
+  }
+}
+@media screen and (max-width: $maxWidth) {
+  .posterContainer {
+    width: 100vw;
+    padding:0;
+    padding-top:10px;
+    padding-bottom:10px;
+    .partPoster {
+      width: 90%;
+    }
+    .part2Poster {
+      width: 90%;
+    }
+  }
+}

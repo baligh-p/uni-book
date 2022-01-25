@@ -1,0 +1,88 @@
+body {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  background-color: whitesmoke;
+}
+* {
+  list-style-type: none;
+  font-family: monospace;
+}
+.ErrorPage {
+  @media screen and (max-width: 699px) {
+    width: 100vw;
+    margin-top: 5vh;
+  }
+  position: relative;
+  top: 7vh;
+  width: 70vw;
+  margin-left: auto;
+  margin-right: auto;
+  letter-spacing: 2px;
+  p {
+    margin: auto;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .oops {
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-align: center;
+    @media screen and (min-width: 700px) {
+      font-size: 18em;
+    }
+    @media screen and (max-width: 699px) {
+      font-size: 10em;
+    }
+    background-image: url("./scssImage/spaceImg.jpg");
+    color: transparent;
+  }
+  .error404 {
+    text-align: center;
+    color: #2979ff;
+    @media screen and (min-width: 700px) {
+      font-size: 4em;
+    }
+    @media screen and (max-width: 699px) {
+      font-size: 2em;
+    }
+  }
+  .errorP {
+    @media screen and (min-width: 700px) {
+      font-size: 15px;
+      width: 60%;
+    }
+    width: 100%;
+    font-size: 18px;
+  }
+  .backTohome {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    .buttonError {
+      border: none;
+      background-color: #00bfa5;
+      width: 170px;
+      height: 40px;
+      font-size: 17px;
+      color: white;
+      cursor: pointer;
+      &:hover {
+        color: #00bfa5;
+        border: 1px solid #00bfa5;
+        background-color: white;
+        transition-delay: 0.2s;
+        transition-duration: 0.2s;
+      }
+    }
+  }
+}
+.errorButtonContainer {
+  display: flex;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}

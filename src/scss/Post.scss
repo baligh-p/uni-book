@@ -1,0 +1,341 @@
+@import "./varscss";
+.postContainer {
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  margin-bottom: 50px;
+  background-color: white;
+  border: 0px solid transparent;
+  border-radius: 12px;
+  box-shadow: 5px 10px 25px rgba(0, 0, 0, 0.171);
+  .part1 {
+    margin-left: 10px;
+    display: grid;
+    height: 80px;
+    grid-template: auto auto / repeat(12, 1fr);
+    grid-template-areas:
+      "t n n . . . . . . . o s"
+      "t d d . . . . . . . . .";
+    .userTag {
+      border: 0px solid transparent;
+      background-color: black;
+      width: auto;
+      height: auto;
+      border-radius: 50%;
+      text-align: center;
+      color: white;
+      vertical-align: middle;
+    }
+    .photoUser {
+      margin-left: auto;
+      margin-top: 5px;
+      grid-area: t;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+    }
+    .typerName {
+      grid-area: n;
+      font-family: bodyFont;
+      font-size: 14px;
+      position: relative;
+      left: 1px;
+    }
+    .datePost {
+      grid-area: d;
+      font-family: bodyFont;
+      font-size: 8px;
+      font-weight: 700;
+      position: relative;
+      white-space: nowrap;
+      bottom: 70%;
+      left: 5px;
+    }
+    .shareImage {
+      grid-area: s;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .optionsImage {
+      grid-area: o;
+      margin-left: auto;
+    }
+    img:not(.photoUser) {
+      position: relative;
+      top: 20px;
+      height: 25px;
+      width: 25px;
+      cursor: pointer;
+      &:hover {
+        transform: scale(1.2);
+        transition: transform 0.2s 0.2s ease-in;
+      }
+    }
+  }
+  .bookContainer {
+    width: 100%;
+    img {
+      width: 100%;
+      height: 60vh;
+      max-height: 1000px;
+      margin-bottom: 40px;
+    }
+    .bookName {
+      position: relative;
+      left: 5%;
+      width: 95%;
+      margin: 0;
+      font-weight: 800;
+      font-size: 18px;
+      color: rgba(0, 0, 0, 0.815);
+    }
+    .typer {
+      margin: 0;
+      margin-bottom: 20px;
+      font-family: bodyFont;
+      font-weight: 600;
+      color: rgb(134, 35, 248);
+      font-size: 14px;
+      width: 90%;
+      position: relative;
+      text-align: right;
+    }
+  }
+  .part2 {
+    margin-top: 20px;
+    .bookName {
+      position: relative;
+      left: 5%;
+      width: 95%;
+      margin: 0;
+      color: rgba(0, 0, 0, 0.815);
+    }
+    .postTxt {
+      font-family: bodyFont;
+      font-size: 13px;
+      overflow-x: hidden;
+      word-wrap: break-word;
+      max-height: 71px;
+      width: 100px;
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .more {
+      width: 20px;
+      position: relative;
+      left: 4%;
+      top: -10px;
+      text-decoration: underline;
+      cursor: pointer;
+      margin-bottom: 20px;
+      background-color: transparent;
+      border: none;
+    }
+  }
+  .part3 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(0, 0, 0, 0.411);
+    .comment {
+      position: relative;
+      top: 6px;
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      img {
+        height: 38px;
+        width: 38px;
+        cursor: pointer;
+      }
+      &:hover {
+        transform: scale(1.15);
+        transition: transform 0.2s 0.1s ease-in-out;
+      }
+    }
+    .share {
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+      position: relative;
+      top: 3px;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      cursor: pointer;
+      img {
+        height: 34px;
+        width: 34px;
+        &:hover {
+          transform: scale(1.15);
+          transition: transform 0.2s 0.1s ease-in-out;
+        }
+      }
+    }
+    .like {
+      display: flex;
+      align-items: center;
+      position: relative;
+      top: 3px;
+      margin-left: auto;
+      margin-right: auto;
+      .reactImage {
+        cursor: pointer;
+        width: 35px;
+        height: 35px;
+        &:hover {
+          transform: scale(1.15);
+          transition: transform 0.2s 0.1s ease-in-out;
+        }
+      }
+      p {
+        font-family: bodyFont;
+        font-size: 13px;
+        margin-left: 3px;
+      }
+    }
+    .commentaire {
+      position: relative;
+      right: 30px;
+      margin-left: 3px;
+      text-align: center;
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+/*commentaire part*/
+.partComments {
+  width: 100%;
+  height: 0;
+  overflow-y: hidden;
+  border-top: 1px solid rgba(0, 0, 0, 0.466);
+  padding-top: 20px;
+  .commentCard {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.473);
+    display: grid;
+    margin-top: 25px;
+    width: 100%;
+    grid-template: auto auto auto / repeat(13, 1fr);
+    grid-template-areas:
+      "f n n . t t t t t t t t ."
+      "f . . . . . . . d d d d .";
+    .photoUser {
+      grid-area: f;
+      margin-left: 10px;
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .typerName {
+      grid-area: n;
+      font-family: bodyFont;
+      font-size: 12px;
+      position: relative;
+      bottom: 10px;
+    }
+    .datePost {
+      grid-area: d;
+      text-align: right;
+      position: relative;
+      bottom: 10px;
+      font-weight: 600;
+      font-family: bodyFont;
+      font-size: 9px;
+    }
+    .txtComment {
+      grid-area: t;
+      font-family: bodyFont;
+      font-size: 14px;
+      overflow-x: hidden;
+      word-wrap: break-word;
+    }
+  }
+  .commentContainer {
+    display: grid;
+    width: 100%;
+    grid-template: auto auto / repeat(13, 1fr);
+    grid-template-areas:
+      ". l l l l l l l l l l . ."
+      "f i i i i i i i i i i i s";
+    .photoUser {
+      grid-area: f;
+      margin-left: 10px;
+      margin-right: 10px;
+      margin-bottom: auto;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+    .sendCommentPhoto {
+      height: 20px;
+      width: 20px;
+      grid-area: s;
+      position: relative;
+      top: 11px;
+      right: 20px;
+      cursor: pointer;
+    }
+    label {
+      grid-area: l;
+      cursor: text;
+      opacity: 0.8;
+      position: relative;
+      left: 5px;
+      font-family: bodyFont;
+      font-size: 12px;
+      font-weight: 500;
+      transform: translateY(28px);
+      transition: transform 0.3s ease-in-out, left 0.3s ease-in-out,
+        font-size 0.3s ease-in-out;
+    }
+    .postInputComment {
+      grid-area: i;
+      resize: none;
+      height: 27px;
+      padding-top: 8px;
+      width: 100%;
+      border-radius: 5px;
+      border: 2px solid rgba(128, 128, 128, 0.692);
+      font-size: 16px;
+      &:focus {
+        outline: none;
+
+        transition: border-color 0.4s 0.1s ease-in-out;
+      }
+    }
+    ::-webkit-scrollbar {
+      width: 3px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #888;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+  }
+}
+@media screen and (max-width: $maxWidth) {
+  .postContainer {
+    .part1 {
+      grid-template-areas:
+        "t n n . . . . . . . o ."
+        "t d d . . . . . . . . .";
+    }
+  }
+}

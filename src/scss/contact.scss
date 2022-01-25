@@ -1,0 +1,204 @@
+@import "./varscss";
+.contactContainer {
+  margin-top: 20vh;
+  position: relative;
+  left: 0;
+  bottom: 0;
+  height: 86vh;
+  width: 98.5vw;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  .part2 {
+    width: 45vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .contactUsTitle {
+      font-family: bodyFont;
+      position: relative;
+      bottom: 50px;
+      font-size: 30px;
+      letter-spacing: 2px;
+    }
+    .contactEmail {
+      font-family: bodyFont;
+      color: black;
+      transition: min-height 0.5s 0s, height 0.5s 0s, border 0s 0.4s;
+      height: 0; /*3vh*/
+      min-height: 0; /*30px*/
+      width: 60%;
+      font-size: 18px;
+      border-left: none;
+      border-right: none;
+      border-top: none;
+      border-bottom: 3px solid rgb(177, 53, 248);
+      background-color: transparent;
+      &:focus {
+        outline: none;
+      }
+    }
+    ::-webkit-input-placeholder {
+      color: black;
+    }
+    .label {
+      cursor: text;
+      font-family: bodyFont;
+      align-self: flex-start;
+      position: relative;
+      left: 20%;
+    }
+    .contactInput {
+      font-family: bodyFont;
+      resize: none;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      height: 10vh;
+      min-height: 150px;
+      font-size: 18px;
+      width: 60%;
+      border: 3px solid rgb(177, 53, 248);
+      background-color: transparent;
+      color: rgb(0, 0, 0);
+      &:focus {
+        outline: none;
+      }
+    }
+    .submitContact {
+      font-family: bodyFont;
+      height: 4vh;
+      min-height: 40px;
+      background-color: white;
+      border: 2px solid rgb(177, 53, 248);
+      color: rgb(177, 53, 248);
+      width: 15vw;
+      max-width: 150px;
+      min-width: 50px;
+      cursor: pointer;
+      align-self: flex-start;
+      position: relative;
+      left: 19.5%;
+      &:hover {
+        background-color: rgb(177, 53, 248);
+        box-shadow: 1px 2px solid black;
+        color: white;
+        box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.425);
+      }
+    }
+  }
+  .part1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 2vw;
+    width: 53vw;
+    height: 100%;
+    border: 0px solid transparent;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.897);
+    box-shadow: 1px 2px 25px rgba(0, 0, 0, 0.61);
+    .num {
+      font-size: 20px;
+      text-decoration: none;
+      color: white;
+      .tel {
+        color: rgb(255, 77, 77);
+      }
+      &:hover {
+        text-decoration: underline;
+        text-decoration-color: white;
+      }
+    }
+    a {
+      text-decoration: none;
+    }
+    .helper {
+      margin-top: 50px;
+    }
+    .email {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: white;
+      font-size: 17px;
+      font-family: 15px;
+      text-decoration: underline;
+      text-decoration-color: white;
+      .iconsContact {
+        height: 35px;
+        margin-right: 10px;
+        width: 35px;
+      }
+    }
+    .iconsContainer {
+      margin: auto;
+      a {
+        margin-left: 15px;
+        margin-right: 15px;
+      }
+      .iconsContact {
+        margin: auto;
+        height: 35px;
+        width: 35px;
+        &:hover {
+          transform: scale(1.1);
+          transition: transform 0.2s 0.1s;
+        }
+      }
+    }
+    .description {
+      text-align: center;
+      text-shadow: 1px 2px rgba(255, 255, 255, 0.568);
+      color: rgb(177, 53, 248);
+      font-weight: bolder;
+      margin: auto;
+      letter-spacing: 1px;
+      font-family: bodyFont;
+      font-size: 25px;
+    }
+  }
+}
+@media screen and (max-width: $maxWidth) {
+  .contactContainer {
+    flex-direction: column-reverse;
+    height: 165vh;
+    .part2 {
+      width: 100%;
+      padding-bottom: 30px;
+      padding-top: 30px;
+      .contactUsTitle {
+        margin-top: 50px;
+      }
+      .contactInput {
+        height: 15vh;
+        min-height: 225px;
+        width: 80%;
+      }
+      .contactEmail {
+        width: 80%;
+      }
+      .label {
+        position: relative;
+        left: 10%;
+      }
+      .submitContact {
+        margin: auto;
+        height: 4vh;
+        min-height: 40px;
+        width: 15vw;
+        min-width: 100px;
+      }
+      .email {
+        margin: auto;
+      }
+    }
+    .part1 {
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 20px;
+    }
+  }
+}
